@@ -2,6 +2,7 @@ import Link from "next/link";
 import { projects } from "@/lib/projects";
 import { experience } from "@/lib/experience";
 import { skills } from "@/lib/skills";
+import GithubActivity from "@/components/GithubActivity";
 
 export default function Home() {
   return (
@@ -94,11 +95,7 @@ export default function Home() {
       <section className="w-full max-w-3xl flex flex-col gap-4">
         <h2 className="font-mono text-sm text-muted">04 / github activity</h2>
         <div className="border border-muted/20 rounded-lg p-6 overflow-x-auto">
-          <img
-            src="https://ghchart.rshah.org/3FC7B8/adil2133-git"
-            alt="Abdul Rahman Adil's GitHub contribution graph"
-            className="w-full min-w-[600px]"
-          />
+          <GithubActivity />
         </div>
       </section>
 

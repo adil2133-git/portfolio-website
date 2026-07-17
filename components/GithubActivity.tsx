@@ -1,6 +1,6 @@
 "use client";
 
-import GitHubCalendar from "react-github-calendar";
+import { GitHubCalendar } from "react-github-calendar";
 
 export default function GithubActivity() {
   return (
@@ -13,8 +13,6 @@ export default function GithubActivity() {
       fontSize={12}
       blockSize={11}
       blockMargin={4}
-      hideColorLegend={false}
-      hideMonthLabels={false}
     />
   );
 }
