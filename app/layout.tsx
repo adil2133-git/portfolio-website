@@ -29,7 +29,7 @@ export default function RootLayout({
   lang="en"
   className={`${plexSans.variable} ${plexMono.variable} h-full antialiased`}
 >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col font-sans antialiased">{children}</body>
     </html>
   );
 }
