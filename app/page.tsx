@@ -15,17 +15,17 @@ export default function Home() {
       </section>
 
       <section className="flex flex-wrap justify-center gap-10 py-4">
-  {[
-    { label: "Full-stack projects", value: "2+" },
-    { label: "Technologies", value: "10+" },
-    { label: "Internship", value: "1" },
-  ].map((stat) => (
-    <div key={stat.label} className="flex flex-col items-center gap-1">
-      <span className="text-2xl font-semibold text-accent">{stat.value}</span>
-      <span className="font-mono text-xs text-muted">{stat.label}</span>
-    </div>
-  ))}
-</section>
+        {[
+          { label: "Full-stack projects", value: "2+" },
+          { label: "Technologies", value: "10+" },
+          { label: "Internship", value: "1" },
+        ].map((stat) => (
+          <div key={stat.label} className="flex flex-col items-center gap-1">
+            <span className="text-2xl font-semibold text-accent">{stat.value}</span>
+            <span className="font-mono text-xs text-muted">{stat.label}</span>
+          </div>
+        ))}
+      </section>
 
       <section className="w-full max-w-3xl flex flex-col gap-6">
         <h2 className="font-mono text-sm text-muted">01 / projects</h2>
@@ -38,16 +38,11 @@ export default function Home() {
           >
             <h3 className="text-xl font-semibold">{project.title}</h3>
             <p className="text-muted">{project.description}</p>
-            <div className="flex flex-wrap gap-2">
-              {project.stack.map((tech) => (
-                <span
-                  key={tech}
-                  className="font-mono text-xs border border-muted/30 text-muted px-2 py-1 rounded"
-                >
-                  {tech}
-                </span>
+            <ul className="list-disc list-inside text-muted text-sm flex flex-col gap-1">
+              {project.highlights.map((point) => (
+                <li key={point}>{point}</li>
               ))}
-            </div>
+            </ul>
           </Link>
         ))}
       </section>
@@ -109,9 +104,7 @@ export default function Home() {
 
       <section className="w-full max-w-3xl flex flex-col items-center gap-6 py-12 text-center">
         <h2 className="font-mono text-sm text-muted">05 / connect</h2>
-        <p className="max-w-md text-lg text-muted">
-          Open to new roles and collaborations — feel free to reach out.
-        </p>
+        <p className="max-w-md text-lg text-muted">Open to new roles and collaborations — feel free to reach out.</p>
 
         <div className="flex flex-wrap items-center justify-center gap-4">
           <a
