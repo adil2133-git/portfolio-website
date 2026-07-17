@@ -14,6 +14,19 @@ export default function Home() {
         </p>
       </section>
 
+      <section className="flex flex-wrap justify-center gap-10 py-4">
+  {[
+    { label: "Full-stack projects", value: "2+" },
+    { label: "Technologies", value: "10+" },
+    { label: "Internship", value: "1" },
+  ].map((stat) => (
+    <div key={stat.label} className="flex flex-col items-center gap-1">
+      <span className="text-2xl font-semibold text-accent">{stat.value}</span>
+      <span className="font-mono text-xs text-muted">{stat.label}</span>
+    </div>
+  ))}
+</section>
+
       <section className="w-full max-w-3xl flex flex-col gap-6">
         <h2 className="font-mono text-sm text-muted">01 / projects</h2>
 
