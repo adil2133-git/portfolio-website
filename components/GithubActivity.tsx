@@ -1,8 +1,17 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { GitHubCalendar } from "react-github-calendar";
 
 export default function GithubActivity() {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
+
   return (
     <GitHubCalendar
       username="adil2133-git"
