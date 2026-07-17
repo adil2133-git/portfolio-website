@@ -15,7 +15,7 @@ export default function Home() {
       </section>
 
       <section className="w-full max-w-3xl flex flex-col gap-6">
-        <h2 className="font-mono text-sm text-muted">~/projects</h2>
+        <h2 className="font-mono text-sm text-muted">01 / projects</h2>
 
         {projects.map((project) => (
           <Link
@@ -40,7 +40,7 @@ export default function Home() {
       </section>
 
       <section className="w-full max-w-3xl flex flex-col gap-6">
-        <h2 className="font-mono text-sm text-muted">~/experience</h2>
+        <h2 className="font-mono text-sm text-muted">02 / experience</h2>
 
         {experience.map((job) => (
           <div
@@ -62,7 +62,7 @@ export default function Home() {
       </section>
 
       <section className="w-full max-w-3xl flex flex-col gap-6">
-        <h2 className="font-mono text-sm text-muted">~/skills</h2>
+        <h2 className="font-mono text-sm text-muted">03 / skills</h2>
 
         <div className="flex flex-col gap-5">
           {skills.map((group) => (
@@ -83,8 +83,19 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="w-full max-w-3xl flex flex-col gap-4">
+        <h2 className="font-mono text-sm text-muted">04 / github activity</h2>
+        <div className="border border-muted/20 rounded-lg p-6 overflow-x-auto">
+          <img
+            src="https://ghchart.rshah.org/3FC7B8/adil2133-git"
+            alt="Abdul Rahman Adil's GitHub contribution graph"
+            className="w-full min-w-[600px]"
+          />
+        </div>
+      </section>
+
       <section className="w-full max-w-3xl flex flex-col items-center gap-6 py-12 text-center">
-        <h2 className="font-mono text-sm text-muted">~/contact</h2>
+        <h2 className="font-mono text-sm text-muted">05 / connect</h2>
         <p className="max-w-md text-lg text-muted">
           Open to new roles and collaborations — feel free to reach out.
         </p>
