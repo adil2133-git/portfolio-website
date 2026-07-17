@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
+import Header from "@/components/Header";
 
 const plexSans = IBM_Plex_Sans({
   variable: "--font-sans",
@@ -26,10 +27,13 @@ export default function RootLayout({
 }>) {
   return (
     <html
-  lang="en"
-  className={`${plexSans.variable} ${plexMono.variable} h-full antialiased`}
->
-      <body className="min-h-full flex flex-col font-sans antialiased">{children}</body>
+      lang="en"
+      className={`${plexSans.variable} ${plexMono.variable} h-full antialiased`}
+    >
+      <body className="min-h-full flex flex-col font-sans antialiased">
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }
