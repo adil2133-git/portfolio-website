@@ -50,17 +50,6 @@ export default async function ProjectPage({
             GitHub
           </a>
         )}
-        {project.githubUrls?.map((repo) => (
-          <a
-            key={repo.label}
-            href={repo.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-mono text-sm border border-muted/30 px-4 py-2 rounded-md"
-          >
-            {repo.label}
-          </a>
-        ))}
       </div>
     </main>
   );

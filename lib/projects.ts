@@ -5,7 +5,6 @@ export type Project = {
   stack: string[];
   liveUrl?: string;
   githubUrl?: string;
-  githubUrls?: { label: string; url: string }[];
 };
 
 export const projects: Project[] = [
@@ -24,9 +23,6 @@ export const projects: Project[] = [
       "A football-themed e-commerce platform with JWT authentication, Razorpay payments, and CI/CD deployment to AWS and Vercel.",
     stack: ["React", "Node.js", "Express", "MongoDB", "Redux", "Redis"],
     liveUrl: "https://www.futgen.shop/",
-    githubUrls: [
-      { label: "Frontend", url: "https://github.com/adil2133-git/futgen-frontend" },
-      { label: "Backend", url: "https://github.com/adil2133-git/futgen-backend" },
-    ],
-  },
+    githubUrl: "https://github.com/adil2133-git/futgen",
+},
 ];
