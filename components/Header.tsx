@@ -1,3 +1,4 @@
+import Link from "next/link";
 import ThemeToggle from "@/components/ThemeToggle";
 
 export default function Header() {
@@ -6,6 +7,9 @@ export default function Header() {
       <span className="font-mono text-sm text-muted">~/adil</span>
 
       <nav className="flex items-center gap-5">
+        <Link href="/about" className="text-sm hover:text-accent transition-colors">
+          About
+        </Link>
         <a
           href="https://github.com/adil2133-git"
           target="_blank"
