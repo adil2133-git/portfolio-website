@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { projects } from "@/lib/projects";
+import { experience } from "@/lib/experience";
 
 export default function Home() {
   return (
@@ -34,6 +35,28 @@ export default function Home() {
               ))}
             </div>
           </Link>
+        ))}
+      </section>
+
+      <section className="w-full max-w-3xl flex flex-col gap-6">
+        <h2 className="font-mono text-sm text-muted">~/experience</h2>
+
+        {experience.map((job) => (
+          <div
+            key={job.company}
+            className="border border-muted/20 rounded-lg p-6 flex flex-col gap-2"
+          >
+            <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+              <h3 className="text-lg font-semibold">{job.role}</h3>
+              <span className="font-mono text-xs text-muted">{job.duration}</span>
+            </div>
+            <p className="text-accent text-sm">{job.company}</p>
+            <ul className="list-disc list-inside text-muted text-sm flex flex-col gap-1 mt-2">
+              {job.points.map((point) => (
+                <li key={point}>{point}</li>
+              ))}
+            </ul>
+          </div>
         ))}
       </section>
     </main>
