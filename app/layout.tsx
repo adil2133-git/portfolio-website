@@ -17,7 +17,16 @@ const plexMono = IBM_Plex_Mono({
 
 export const metadata: Metadata = {
   title: "Abdul Rahman Adil | Full-Stack Developer",
-  description: "Portfolio of Abdul Rahman Adil — Full-Stack Developer (MERN) building QuickCart and FUTGEN.",
+  description:
+    "Portfolio of Abdul Rahman Adil — Full-Stack Developer (MERN) building QuickCart and FUTGEN.",
+  keywords: ["Abdul Rahman Adil", "Full Stack Developer", "MERN Developer", "React", "Next.js"],
+  openGraph: {
+    title: "Abdul Rahman Adil | Full-Stack Developer",
+    description: "Full-Stack Developer (MERN) — QuickCart, FUTGEN, and more.",
+    url: "https://your-domain.com",
+    siteName: "Abdul Rahman Adil",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
