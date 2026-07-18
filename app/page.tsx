@@ -1,8 +1,6 @@
 import Link from "next/link";
-import { projects } from "@/lib/projects";
 import GithubActivity from "@/components/GithubActivity";
 import FadeIn from "@/components/FadeIn";
-import ProjectCard from "@/components/ProjectCard";
 
 
 export default function Home() {
@@ -11,15 +9,7 @@ export default function Home() {
       
 
 
-      <FadeIn>
-        <section className="w-full max-w-3xl flex flex-col gap-6">
-          <h2 className="font-mono text-sm text-muted">01 / projects</h2>
-
-          {projects.map((project) => (
-            <ProjectCard key={project.slug} project={project} />
-          ))}
-        </section >
-      </FadeIn>
+      
 
 
       <FadeIn>
