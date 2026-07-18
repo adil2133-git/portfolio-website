@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import Header from "@/components/Header";
+import NetworkBackground from "@/components/NetworkBackground";
 
 const plexSans = IBM_Plex_Sans({
   variable: "--font-sans",
@@ -40,6 +41,7 @@ export default function RootLayout({
       className={`${plexSans.variable} ${plexMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans antialiased">
+        <NetworkBackground />
         <Header />
         {children}
       </body>
