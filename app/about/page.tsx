@@ -1,18 +1,39 @@
+import { MapPin, Briefcase, GraduationCap, Clock } from "lucide-react";
 import { experience } from "@/lib/experience";
 import { skills } from "@/lib/skills";
 
 export default function About() {
   return (
     <main className="flex flex-col items-center gap-16 px-6 py-20">
-      <section className="max-w-2xl flex flex-col gap-4 text-center">
-        <h1 className="text-3xl font-semibold">About</h1>
-        <p className="text-lg text-muted">
-          Full-Stack Developer (MERN) building scalable web applications with
-          React, Next.js, Node.js, and MongoDB. Currently interning at
-          Bridgeon Solution, with two shipped full-stack projects — QuickCart
-          and FUTGEN.
-        </p>
-      </section>
+      <section className="w-full max-w-3xl flex flex-col gap-8">
+  <div>
+    <h2 className="font-mono text-sm text-accent mb-2">01 / about</h2>
+    <h1 className="text-3xl font-semibold mb-4">
+      Crafting digital experiences with logic and precision.
+    </h1>
+    <p className="text-lg text-muted leading-relaxed">
+      A Kerala-based Full-Stack Developer with a deep-seated enthusiasm for
+      the MERN ecosystem. Currently interning at Bridgeon Solution, with two
+      shipped full-stack projects — QuickCart and FUTGEN — focused on clean
+      code, solid architecture, and real-world problem solving.
+    </p>
+  </div>
+
+  <div className="grid grid-cols-2 gap-4">
+    {[
+      { icon: MapPin, label: "Location", value: "Kerala, India" },
+      { icon: Briefcase, label: "Current Role", value: "Full-Stack Intern" },
+      { icon: GraduationCap, label: "Education", value: "BCA Graduate" },
+      { icon: Clock, label: "Availability", value: "Open to opportunities" },
+    ].map((item) => (
+      <div key={item.label} className="p-4 bg-surface border border-muted/20 rounded-xl">
+        <item.icon size={20} className="text-accent mb-2" />
+        <div className="font-mono text-xs text-muted mb-1">{item.label}</div>
+        <div className="text-foreground">{item.value}</div>
+      </div>
+    ))}
+  </div>
+</section>
 
       <section className="w-full max-w-3xl flex flex-col gap-6">
         <h2 className="font-mono text-sm text-muted">01 / experience</h2>
