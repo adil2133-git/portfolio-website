@@ -1,4 +1,4 @@
-import FadeIn from "../FadeIn";
+import FadeIn from "@/components/FadeIn";
 
 export default function Contact() {
     return (

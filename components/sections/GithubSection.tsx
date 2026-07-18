@@ -1,5 +1,5 @@
-import FadeIn from "../FadeIn";
-import GithubActivity from "../GithubActivity";
+import FadeIn from "@/components/FadeIn";
+import GithubActivity from "@/components/GithubActivity";
 
 export default function GithubSection() {
     return (

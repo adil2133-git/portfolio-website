@@ -1,4 +1,4 @@
-import FadeIn from "../FadeIn";
+import FadeIn from "@/components/FadeIn";
 import ProjectCard from "@/components/ProjectCard";
 import { projects } from "@/lib/projects";
 
