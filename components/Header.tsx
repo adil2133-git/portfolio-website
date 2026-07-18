@@ -2,8 +2,6 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import ThemeToggle from "@/components/ThemeToggle";
-
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
 
@@ -40,7 +38,6 @@ export default function Header() {
           >
             Resume
           </a>
-          <ThemeToggle />
         </div>
       </nav>
     </header>

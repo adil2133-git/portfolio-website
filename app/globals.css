@@ -1,22 +1,14 @@
 @import "tailwindcss";
 
-@custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --background: #F5F6F8;
-  --surface: #FFFFFF;
-  --foreground: #14181F;
-  --muted: #5B6472;
-  --accent: #1D9E75;
+  --background: #08090D;
+  --surface: #121319;
+  --foreground: #E5E6EC;
+  --muted: #9A9BAC;
+  --accent: #7C6FF0;
 }
 
-.dark {
-  --background: #0B0E14;
-  --surface: #12161F;
-  --foreground: #E3E6EA;
-  --muted: #7C8592;
-  --accent: #3FC7B8;
-}
 
 @theme inline {
   --color-background: var(--background);
@@ -35,8 +27,11 @@ body {
 }
 
 @keyframes blink {
-  50% { opacity: 0; }
+  50% {
+    opacity: 0;
+  }
 }
+
 .cursor-blink {
   animation: blink 1s step-end infinite;
 }
