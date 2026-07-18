@@ -1,10 +1,9 @@
 import Link from "next/link";
-import { ExternalLink } from "lucide-react";
-import { SiGithub } from "react-icons/si";
 import { projects } from "@/lib/projects";
 import GithubActivity from "@/components/GithubActivity";
 import FadeIn from "@/components/FadeIn";
 import HeroReveal from "@/components/HeroReveal";
+import ProjectCard from "@/components/ProjectCard";
 
 export default function Home() {
   return (
@@ -40,48 +39,8 @@ export default function Home() {
           <h2 className="font-mono text-sm text-muted">01 / projects</h2>
 
           {projects.map((project) => (
-            <div
-              key={project.slug}
-              className="border border-muted/20 rounded-lg p-6 flex flex-col gap-3 hover:border-accent transition-colors"
-            >
-              <Link href={`/projects/${project.slug}`}>
-                <h3 className="text-xl font-semibold hover:text-accent transition-colors">
-                  {project.title}
-                </h3>
-              </Link>
-              <p className="text-muted">{project.description}</p>
-              <ul className="list-disc list-inside text-muted text-sm flex flex-col gap-1">
-                {project.highlights.map((point) => (
-                  <li key={point}>{point}</li>
-                ))}
-              </ul>
-              <div className="flex gap-4 mt-2">
-                {project.liveUrl && (
-
-                  <a href={project.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 text-sm text-muted hover:text-accent transition-colors"
-                  >
-                    <ExternalLink size={16} />
-                    Live site
-                  </a>
-                )}
-                {project.githubUrl && (
-
-                  <a href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 text-sm text-muted hover:text-accent transition-colors"
-                  >
-                    <SiGithub size={16} />
-                    GitHub
-                  </a>
-                )}
-              </div>
-            </div>
-          ))
-          }
+            <ProjectCard key={project.slug} project={project} />
+          ))}
         </section >
       </FadeIn>
 
