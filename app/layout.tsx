@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import NetworkBackground from "@/components/NetworkBackground";
 
 const plexSans = IBM_Plex_Sans({
@@ -44,6 +45,7 @@ export default function RootLayout({
         <NetworkBackground />
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
