@@ -4,19 +4,20 @@ import { SiGithub } from "react-icons/si";
 import { projects } from "@/lib/projects";
 import GithubActivity from "@/components/GithubActivity";
 import FadeIn from "@/components/FadeIn";
+import HeroReveal from "@/components/HeroReveal";
 
 export default function Home() {
   return (
     <main className="flex flex-col items-center gap-16 px-6 py-20">
-      <FadeIn>
+      <HeroReveal>
         <section className="flex flex-col items-center gap-4 text-center">
-          <h1 className="text-4xl font-semibold">Abdul Rahman Adil</h1>
-          <p className="max-w-md text-lg text-muted">
+          <h1 data-reveal className="text-4xl font-semibold">Abdul Rahman Adil</h1>
+          <p data-reveal className="max-w-md text-lg text-muted">
             Full-Stack Developer (MERN) — building scalable web apps with React,
             Next.js, Node.js, and MongoDB.
           </p>
         </section>
-      </FadeIn>
+      </HeroReveal>
 
 
       <FadeIn>
