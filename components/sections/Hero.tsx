@@ -19,18 +19,6 @@ export default function Hero() {
                         Focused on performance, architecture, and clean code.
                     </p>
 
-                    <div className="flex flex-wrap gap-4 pt-2">
-                        {[
-                            { label: "Full-stack projects", value: "2+" },
-                            { label: "Technologies", value: "10+" },
-                            { label: "Internship", value: "1" },
-                        ].map((stat) => (
-                            <div key={stat.label} className="p-4 bg-surface border border-muted/20 rounded-xl flex-1 min-w-[120px]">
-                                <div className="text-2xl font-semibold text-accent">{stat.value}</div>
-                                <div className="font-mono text-xs text-muted">{stat.label}</div>
-                            </div>
-                        ))}
-                    </div>
                 </div>
 
                 <div className="lg:col-span-5">

@@ -36,20 +36,20 @@ export default function AboutIntro() {
             </div>
 
             <p className="text-foreground leading-relaxed">
-              Hi, I&apos;m Abdul Rahman Adil! I&apos;m a Full-Stack MERN Developer
-              specializing in building scalable React and Next.js frontends
-              backed by robust Node.js and Express APIs.
-            </p>
-            <p className="text-muted leading-relaxed">
-              Currently interning at Bridgeon Solution, where I work across the
-              full stack — from REST API integration and JWT authentication to
-              payment gateway integrations and Redis-backed workflows.
-            </p>
-            <p className="text-muted leading-relaxed">
-              I&apos;ve shipped two full-stack projects end to end — QuickCart and
-              FUTGEN — focused on clean architecture, real-time features, and
-              production deployment, not just local demos.
-            </p>
+  Hi, I&apos;m Abdul Rahman Adil! I&apos;m a Full-Stack MERN Developer
+  specializing in building scalable React and Next.js frontends
+  backed by robust Node.js and Express APIs.
+</p>
+<p className="text-muted leading-relaxed">
+  Currently interning at Bridgeon Solution, where I work across the
+  full stack — from REST API integration and JWT authentication to
+  payment gateway integrations and Redis-backed workflows.
+</p>
+<p className="text-muted leading-relaxed">
+  I&apos;ve shipped two full-stack projects end to end — QuickCart and
+  FUTGEN — focused on clean architecture, real-time features, and
+  production deployment, not just local demos.
+</p>
 
             <div className="flex flex-wrap gap-3 mt-2">
              <a 
