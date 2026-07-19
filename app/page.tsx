@@ -8,7 +8,7 @@ import Contact from "@/components/sections/Contact";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center gap-16 px-6 py-20">
+    <main className="flex flex-col items-center gap-24 px-6 py-20">
       <Hero />
       <AboutIntro />
       <Projects />
