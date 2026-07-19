@@ -60,15 +60,15 @@ export default function Contact() {
                             {details.map((item) => {
                                 const Icon = item.icon;
                                 const content = (
-                                    <div className="flex items-center gap-4 bg-surface border border-muted/20 p-4 rounded-xl hover:border-accent/40 transition-colors">
-                                        <div className="w-10 h-10 rounded-lg bg-background border border-muted/20 flex items-center justify-center text-accent shrink-0">
-                                            <Icon size={16} />
+                                    <div className="flex items-center gap-4 bg-surface border border-muted/20 p-3.5 rounded-xl hover:border-accent/40 transition-colors">
+                                        <div className="w-9 h-9 rounded-lg bg-background border border-muted/20 flex items-center justify-center text-accent shrink-0">
+                                            <Icon size={15} />
                                         </div>
                                         <div className="flex flex-col">
-                                            <span className="font-mono text-[10px] text-muted uppercase tracking-widest mb-0.5">
+                                            <span className="font-mono text-[9px] text-muted uppercase tracking-widest mb-0.5">
                                                 {item.label}
                                             </span>
-                                            <span className="text-sm text-foreground">{item.value}</span>
+                                            <span className="text-sm font-semibold text-foreground">{item.value}</span>
                                         </div>
                                     </div>
                                 );
@@ -160,6 +160,6 @@ export default function Contact() {
                     </form>
                 </div>
             </section>
-        </FadeIn>
+        </FadeIn >
     );
 }
