@@ -43,3 +43,20 @@ body {
 .animate-marquee-left {
   animation: marquee-left 30s linear infinite;
 }
+
+.activity-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+.activity-scroll::-webkit-scrollbar-track {
+  background: var(--background);
+  border-radius: 999px;
+}
+.activity-scroll::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 999px;
+  opacity: 0.5;
+}
+.activity-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent) var(--background);
+}
