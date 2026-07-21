@@ -1,6 +1,7 @@
 import { projects } from "@/lib/projects";
 import ProjectCard from "@/components/ProjectCard";
 import FadeIn from "@/components/FadeIn";
+import { StaggerContainer, StaggerItem } from "@/components/staggerReveal";
 
 export default function Projects() {
   return (
@@ -13,11 +14,14 @@ export default function Projects() {
           <div className="h-px flex-grow bg-muted/20" />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {projects.map((project) => (
-            <ProjectCard key={project.slug} project={project} />
-          ))}
-        </div>
+        <StaggerContainer>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {projects.map((project) => (
+              <ProjectCard key={project.slug} project={project} />
+            ))}
+          </div>
+        </StaggerContainer>
       </section>
     </FadeIn>
   );
