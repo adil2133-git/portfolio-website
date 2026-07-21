@@ -5,6 +5,8 @@ import { Mail, Phone, MapPin, Send, Briefcase, Clock } from "lucide-react";
 import { SiGithub } from "react-icons/si";
 import { FaLinkedin } from "react-icons/fa";
 import FadeIn from "@/components/FadeIn";
+import { StaggerContainer, StaggerItem } from "../staggerReveal";
+
 
 export default function Contact() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
@@ -94,7 +96,7 @@ export default function Contact() {
               {socials.map((item) => {
                 const Icon = item.icon;
                 return (
-                 <a 
+                  <a
                     key={item.label}
                     href={item.href}
                     target="_blank"
@@ -112,47 +114,55 @@ export default function Contact() {
             </div>
           </div>
 
-          <form
-            onSubmit={handleSubmit}
-            className="lg:col-span-7 flex flex-col gap-4 bg-surface border border-muted/20 rounded-2xl p-6 sm:p-8"
-          >
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="flex flex-col gap-1">
-                <label htmlFor="name" className="font-mono text-[10px] text-muted uppercase tracking-widest">Name</label>
-                <input
-                  id="name" name="name" type="text" required placeholder="Your name"
-                  className="bg-background border border-muted/30 rounded-lg px-3 py-2.5 text-sm text-foreground focus:border-accent outline-none transition-colors"
-                />
-              </div>
-              <div className="flex flex-col gap-1">
-                <label htmlFor="email" className="font-mono text-[10px] text-muted uppercase tracking-widest">Email</label>
-                <input
-                  id="email" name="email" type="email" required placeholder="you@example.com"
-                  className="bg-background border border-muted/30 rounded-lg px-3 py-2.5 text-sm text-foreground focus:border-accent outline-none transition-colors"
-                />
-              </div>
-            </div>
-
-            <div className="flex flex-col gap-1">
-              <label htmlFor="message" className="font-mono text-[10px] text-muted uppercase tracking-widest">Message</label>
-              <textarea
-                id="message" name="message" required rows={6} placeholder="Let's talk about..."
-                className="bg-background border border-muted/30 rounded-lg px-3 py-2.5 text-sm text-foreground focus:border-accent outline-none transition-colors resize-none"
-              />
-            </div>
-
-            <button
-              type="submit"
-              disabled={status === "sending"}
-              className="w-full flex items-center justify-center gap-2 font-mono text-sm bg-accent text-background font-semibold py-3 rounded-lg hover:brightness-110 transition-all disabled:opacity-50"
+          <StaggerContainer>
+            <form
+              onSubmit={handleSubmit}
+              className="lg:col-span-7 flex flex-col gap-4 bg-surface border border-muted/20 rounded-2xl p-6 sm:p-8"
             >
-              {status === "sending" ? "Sending..." : status === "sent" ? "Message sent ✓" : (<><Send size={14} />Send Message</>)}
-            </button>
+              <StaggerItem>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="flex flex-col gap-1">
+                    <label htmlFor="name" className="font-mono text-[10px] text-muted uppercase tracking-widest">Name</label>
+                    <input
+                      id="name" name="name" type="text" required placeholder="Your name"
+                      className="bg-background border border-muted/30 rounded-lg px-3 py-2.5 text-sm text-foreground focus:border-accent outline-none transition-colors"
+                    />
+                  </div>
+                  <div className="flex flex-col gap-1">
+                    <label htmlFor="email" className="font-mono text-[10px] text-muted uppercase tracking-widest">Email</label>
+                    <input
+                      id="email" name="email" type="email" required placeholder="you@example.com"
+                      className="bg-background border border-muted/30 rounded-lg px-3 py-2.5 text-sm text-foreground focus:border-accent outline-none transition-colors"
+                    />
+                  </div>
+                </div>
+              </StaggerItem>
 
-            {status === "error" && (
-              <p className="text-sm text-red-400 text-center">Something went wrong — try emailing me directly instead.</p>
-            )}
-          </form>
+              <StaggerItem>
+                <div className="flex flex-col gap-1">
+                  <label htmlFor="message" className="font-mono text-[10px] text-muted uppercase tracking-widest">Message</label>
+                  <textarea
+                    id="message" name="message" required rows={6} placeholder="Let's talk about..."
+                    className="bg-background border border-muted/30 rounded-lg px-3 py-2.5 text-sm text-foreground focus:border-accent outline-none transition-colors resize-none"
+                  />
+                </div>
+              </StaggerItem>
+
+              <StaggerItem>
+                <button
+                  type="submit"
+                  disabled={status === "sending"}
+                  className="w-full flex items-center justify-center gap-2 font-mono text-sm bg-accent text-background font-semibold py-3 rounded-lg hover:brightness-110 transition-all disabled:opacity-50"
+                >
+                  {status === "sending" ? "Sending..." : status === "sent" ? "Message sent ✓" : (<><Send size={14} />Send Message</>)}
+                </button>
+              </StaggerItem>
+
+              {status === "error" && (
+                <p className="text-sm text-red-400 text-center">Something went wrong — try emailing me directly instead.</p>
+              )}
+            </form>
+          </StaggerContainer>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
