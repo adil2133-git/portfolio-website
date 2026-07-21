@@ -4,8 +4,8 @@ import { useState } from "react";
 import { Mail, Phone, MapPin, Send, Briefcase, Clock } from "lucide-react";
 import { SiGithub } from "react-icons/si";
 import { FaLinkedin } from "react-icons/fa";
+import { StaggerContainer, StaggerItem } from "@/components/StaggerReveal";
 import FadeIn from "@/components/FadeIn";
-import { StaggerContainer, StaggerItem } from "../staggerReveal";
 
 
 export default function Contact() {
@@ -114,7 +114,7 @@ export default function Contact() {
             </div>
           </div>
 
-          <StaggerContainer>
+<StaggerContainer className="lg:col-span-7">
             <form
               onSubmit={handleSubmit}
               className="lg:col-span-7 flex flex-col gap-4 bg-surface border border-muted/20 rounded-2xl p-6 sm:p-8"

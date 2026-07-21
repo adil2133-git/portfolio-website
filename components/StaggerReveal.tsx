@@ -15,9 +15,16 @@ const item: Variants = {
   show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
 };
 
-export function StaggerContainer({ children }: { children: ReactNode }) {
+export function StaggerContainer({
+  children,
+  className,
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
   return (
     <motion.div
+      className={className}
       variants={container}
       initial="hidden"
       whileInView="show"

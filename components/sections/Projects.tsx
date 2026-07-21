@@ -1,7 +1,7 @@
 import { projects } from "@/lib/projects";
 import ProjectCard from "@/components/ProjectCard";
 import FadeIn from "@/components/FadeIn";
-import { StaggerContainer, StaggerItem } from "@/components/staggerReveal";
+import { StaggerContainer, StaggerItem } from "@/components/StaggerReveal";
 
 export default function Projects() {
   return (

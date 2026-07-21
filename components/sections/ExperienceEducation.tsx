@@ -1,6 +1,6 @@
 import { experience } from "@/lib/experience";
 import FadeIn from "@/components/FadeIn";
-import { StaggerContainer, StaggerItem } from "@/components/staggerReveal";
+import { StaggerContainer, StaggerItem } from "@/components/StaggerReveal";
 
 const education = {
   degree: "Bachelor of Computer Application",
