@@ -1,5 +1,6 @@
 import { experience } from "@/lib/experience";
 import FadeIn from "@/components/FadeIn";
+import { StaggerContainer, StaggerItem } from "@/components/staggerReveal";
 
 const education = {
   degree: "Bachelor of Computer Application",
@@ -19,36 +20,40 @@ type TimelineEntry = {
 
 function Timeline({ entries }: { entries: TimelineEntry[] }) {
   return (
-    <div className="flex flex-col">
-      {entries.map((entry, i) => (
-        <div key={entry.title} className="grid grid-cols-1 sm:grid-cols-[140px_1fr] gap-4 sm:gap-8">
-          <div className="hidden sm:flex flex-col items-end pt-1">
-            <span className="font-mono text-xs text-muted">{entry.duration}</span>
-          </div>
+    <StaggerContainer>
+      <div className="flex flex-col">
+        {entries.map((entry, i) => (
+          <StaggerItem key={entry.title}>
+            <div key={entry.title} className="grid grid-cols-1 sm:grid-cols-[140px_1fr] gap-4 sm:gap-8">
+              <div className="hidden sm:flex flex-col items-end pt-1">
+                <span className="font-mono text-xs text-muted">{entry.duration}</span>
+              </div>
 
-          <div className="relative pl-8 pb-10">
-            <div className="absolute left-0 top-2 w-2.5 h-2.5 rounded-full bg-accent" />
-            {i < entries.length - 1 && (
-              <div className="absolute left-[4.5px] top-4 bottom-0 w-px bg-muted/20" />
-            )}
+              <div className="relative pl-8 pb-10">
+                <div className="absolute left-0 top-2 w-2.5 h-2.5 rounded-full bg-accent" />
+                {i < entries.length - 1 && (
+                  <div className="absolute left-[4.5px] top-4 bottom-0 w-px bg-muted/20" />
+                )}
 
-            <span className="sm:hidden font-mono text-xs text-muted block mb-2">
-              {entry.duration}
-            </span>
+                <span className="sm:hidden font-mono text-xs text-muted block mb-2">
+                  {entry.duration}
+                </span>
 
-            <div className="bg-surface border border-muted/20 rounded-xl p-6 flex flex-col gap-2">
-              <h3 className="text-lg font-semibold text-foreground">{entry.title}</h3>
-              <p className="text-accent text-sm font-mono">{entry.org}</p>
-              <ul className="list-disc list-inside text-muted text-sm flex flex-col gap-1.5 mt-2">
-                {entry.points.map((point) => (
-                  <li key={point}>{point}</li>
-                ))}
-              </ul>
+                <div className="bg-surface border border-muted/20 rounded-xl p-6 flex flex-col gap-2">
+                  <h3 className="text-lg font-semibold text-foreground">{entry.title}</h3>
+                  <p className="text-accent text-sm font-mono">{entry.org}</p>
+                  <ul className="list-disc list-inside text-muted text-sm flex flex-col gap-1.5 mt-2">
+                    {entry.points.map((point) => (
+                      <li key={point}>{point}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-      ))}
-    </div>
+          </StaggerItem>
+        ))}
+      </div>
+    </StaggerContainer>
   );
 }
 
