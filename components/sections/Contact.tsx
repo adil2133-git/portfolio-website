@@ -117,7 +117,7 @@ export default function Contact() {
 <StaggerContainer className="lg:col-span-7">
             <form
               onSubmit={handleSubmit}
-              className="lg:col-span-7 flex flex-col gap-4 bg-surface border border-muted/20 rounded-2xl p-6 sm:p-8"
+              className="flex flex-col gap-4 bg-surface border border-muted/20 rounded-2xl p-6 sm:p-8"
             >
               <StaggerItem>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

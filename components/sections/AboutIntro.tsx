@@ -6,21 +6,22 @@ import { StaggerContainer, StaggerItem } from "@/components/StaggerReveal";
 export default function AboutIntro() {
   return (
     <section id="about" className="w-full max-w-5xl flex flex-col gap-8 scroll-mt-24">
-      <StaggerItem>
-        <div className="flex items-center gap-4">
-          <h2 className="font-mono text-sm text-accent uppercase tracking-widest whitespace-nowrap">
-            01 / about
-          </h2>
-          <div className="h-px flex-grow bg-muted/20" />
-        </div>
-      </StaggerItem>
-
-      <StaggerContainer className="grid grid-cols-1 md:grid-cols-[280px_1fr] gap-10 items-start">
+      <StaggerContainer className="flex flex-col gap-8 w-full">
         <StaggerItem>
-          <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden border border-muted/20 bg-surface">
-            <Image src="/profile.png" alt="Abdul Rahman Adil" fill sizes="280px" className="object-cover" priority />
+          <div className="flex items-center gap-4">
+            <h2 className="font-mono text-sm text-accent uppercase tracking-widest whitespace-nowrap">
+              01 / about
+            </h2>
+            <div className="h-px flex-grow bg-muted/20" />
           </div>
         </StaggerItem>
+
+        <div className="grid grid-cols-1 md:grid-cols-[280px_1fr] gap-10 items-start">
+          <StaggerItem>
+            <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden border border-muted/20 bg-surface">
+              <Image src="/profile.png" alt="Abdul Rahman Adil" fill sizes="280px" className="object-cover" priority />
+            </div>
+          </StaggerItem>
 
         <div className="flex flex-col gap-4">
           <StaggerItem>
@@ -77,7 +78,8 @@ export default function AboutIntro() {
             </div>
           </StaggerItem>
         </div>
-      </StaggerContainer>
+      </div>
+    </StaggerContainer>
     </section>
   );
 }
