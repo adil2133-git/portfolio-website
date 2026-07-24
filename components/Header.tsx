@@ -2,7 +2,6 @@
 
 import { useEffect, useState, useRef } from "react";
 import gsap from "gsap";
-import Link from "next/link";
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const underlineRef = useRef<HTMLDivElement>(null);
