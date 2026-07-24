@@ -46,7 +46,7 @@ export default function Activity() {
           </a>
         </div>
 
-        <div ref={scrollRef} className="activity-scroll overflow-x-auto pb-2">
+        <div ref={scrollRef} className="activity-scroll overflow-x-auto pb-2 flex justify-start md:justify-center">
           {isClient && (
             <GitHubCalendar
               username="adil2133-git"

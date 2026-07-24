@@ -29,8 +29,10 @@ export default function PageLoader({ children }: { children: React.ReactNode }) 
     if (alreadySeen || reduceMotion) {
       if (hasRevealTargets) gsap.set(revealTargets, { opacity: 1, y: 0 });
       else gsap.set(contentRef.current, { opacity: 1, y: 0 });
-      setVisible(false);
-      announce();
+      setTimeout(() => {
+        setVisible(false);
+        announce();
+      }, 0);
       return;
     }
 
