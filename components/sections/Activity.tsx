@@ -51,7 +51,7 @@ export default function Activity() {
             <GitHubCalendar
               username="adil2133-git"
               colorScheme="dark"
-              theme={{ dark: ["#121319", "#2A2464", "#3F35A5", "#5A4CD9", "#7C6FF0"] }}
+              theme={{ dark: ["#1b1d26", "#2A2464", "#3F35A5", "#5A4CD9", "#7C6FF0"] }}
               fontSize={12}
               blockSize={11}
               blockMargin={4}

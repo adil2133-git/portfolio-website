@@ -60,3 +60,10 @@ body {
   scrollbar-width: thin;
   scrollbar-color: var(--accent) var(--background);
 }
+
+.react-activity-calendar text {
+  font-family: 'IBM Plex Mono', monospace !important;
+}
+.react-activity-calendar {
+  font-family: 'IBM Plex Mono', monospace !important;
+}
