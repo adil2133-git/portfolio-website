@@ -1,12 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, Phone, MapPin, Send, Briefcase, Clock } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Briefcase, Clock, MessageSquare } from "lucide-react";
 import { SiGithub } from "react-icons/si";
 import { FaLinkedin } from "react-icons/fa";
 import { StaggerContainer, StaggerItem } from "@/components/StaggerReveal";
 import FadeIn from "@/components/FadeIn";
-
 
 export default function Contact() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
@@ -49,22 +48,49 @@ export default function Contact() {
   ];
 
   const info = [
-    { icon: Clock, title: "Availability", text: "Open to full-time roles and collaborations — currently interning at Bridgeon Solution." },
-    { icon: Briefcase, title: "Focus", text: "Full-Stack MERN — React, Next.js, Node.js, and MongoDB." },
-    { icon: MapPin, title: "Based In", text: "Kerala, India — open to remote and relocation opportunities." },
+    {
+      icon: Clock,
+      title: "Availability",
+      text: "Open to full-time roles & high-impact engineering — interning at Bridgeon Skillversity.",
+    },
+    {
+      icon: Briefcase,
+      title: "Engineering Focus",
+      text: "Full-Stack: React 19, Next.js, Node.js, PostgreSQL, MongoDB, Redis, and AWS/Docker.",
+    },
+    {
+      icon: MapPin,
+      title: "Location Preference",
+      text: "Kerala, India — open to remote roles, hybrid setups, and full relocation opportunities.",
+    },
   ];
 
   return (
     <FadeIn>
-      <section id="contact" className="w-full max-w-5xl flex flex-col gap-12 py-12 scroll-mt-24">
-        <div className="flex flex-col items-center text-center gap-3 mb-4">
-          <span className="font-mono text-xs text-accent uppercase tracking-widest">Get in touch</span>
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
-            Let&apos;s build something<br />efficient together.
+      <section id="contact" className="w-full max-w-5xl flex flex-col gap-10 py-6 scroll-mt-24">
+        {/* Section Header */}
+        <div className="flex flex-col gap-2">
+          <div className="flex items-center gap-4">
+            <h2 className="font-mono text-sm text-accent uppercase tracking-widest whitespace-nowrap flex items-center gap-2">
+              <MessageSquare size={15} />
+              <span>06 / contact</span>
+            </h2>
+            <div className="h-px flex-grow bg-muted/20" />
+          </div>
+          <p className="text-muted text-sm sm:text-base">
+            Get in touch for opportunities, technical collaboration, or questions.
+          </p>
+        </div>
+
+        <div className="flex flex-col items-center text-center gap-3">
+          <span className="font-mono text-xs text-accent uppercase tracking-widest">
+            Let&apos;s Connect
+          </span>
+          <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-foreground">
+            Let&apos;s build scalable, reliable<br className="hidden sm:inline" /> systems together.
           </h2>
-          <p className="text-muted max-w-md">
-            Currently open to new roles and collaborations. Whether you have a
-            question or just want to say hi, my inbox is always open.
+          <p className="text-muted max-w-lg text-sm sm:text-base">
+            I am actively exploring full-stack engineering roles. Whether you have an open position or want to discuss technical architecture, feel free to reach out.
           </p>
         </div>
 
@@ -77,22 +103,26 @@ export default function Contact() {
                   <div className="w-10 h-10 rounded-lg bg-background border border-muted/20 flex items-center justify-center text-accent shrink-0">
                     <Icon size={16} />
                   </div>
-                  <div className="flex flex-col">
+                  <div className="flex flex-col min-w-0">
                     <span className="font-mono text-[10px] text-muted uppercase tracking-widest mb-0.5">
                       {item.label}
                     </span>
-                    <span className="text-sm font-semibold text-foreground">{item.value}</span>
+                    <span className="text-sm font-semibold text-foreground truncate">
+                      {item.value}
+                    </span>
                   </div>
                 </div>
               );
               return item.href ? (
-                <a key={item.label} href={item.href}>{content}</a>
+                <a key={item.label} href={item.href}>
+                  {content}
+                </a>
               ) : (
                 <div key={item.label}>{content}</div>
               );
             })}
 
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {socials.map((item) => {
                 const Icon = item.icon;
                 return (
@@ -107,43 +137,63 @@ export default function Contact() {
                     <span className="font-mono text-[10px] text-muted uppercase tracking-widest">
                       {item.label}
                     </span>
-                    <span className="text-sm font-semibold text-foreground">{item.value}</span>
+                    <span className="text-sm font-semibold text-foreground truncate">
+                      {item.value}
+                    </span>
                   </a>
                 );
               })}
             </div>
           </div>
 
-<StaggerContainer className="lg:col-span-7">
+          <StaggerContainer className="lg:col-span-7">
             <form
               onSubmit={handleSubmit}
-              className="flex flex-col gap-4 bg-surface border border-muted/20 rounded-2xl p-6 sm:p-8"
+              className="flex flex-col gap-4 bg-surface border border-muted/20 rounded-2xl p-5 sm:p-8 shadow-lg"
             >
               <StaggerItem>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div className="flex flex-col gap-1">
-                    <label htmlFor="name" className="font-mono text-[10px] text-muted uppercase tracking-widest">Name</label>
+                  <div className="flex flex-col gap-1.5">
+                    <label htmlFor="name" className="font-mono text-[10px] text-muted uppercase tracking-widest">
+                      Name
+                    </label>
                     <input
-                      id="name" name="name" type="text" required placeholder="Your name"
-                      className="bg-background border border-muted/30 rounded-lg px-3 py-2.5 text-sm text-foreground focus:border-accent outline-none transition-colors"
+                      id="name"
+                      name="name"
+                      type="text"
+                      required
+                      placeholder="Your name"
+                      className="bg-background border border-muted/30 rounded-lg px-3.5 py-2.5 text-sm text-foreground focus:border-accent outline-none transition-colors"
                     />
                   </div>
-                  <div className="flex flex-col gap-1">
-                    <label htmlFor="email" className="font-mono text-[10px] text-muted uppercase tracking-widest">Email</label>
+                  <div className="flex flex-col gap-1.5">
+                    <label htmlFor="email" className="font-mono text-[10px] text-muted uppercase tracking-widest">
+                      Email
+                    </label>
                     <input
-                      id="email" name="email" type="email" required placeholder="you@example.com"
-                      className="bg-background border border-muted/30 rounded-lg px-3 py-2.5 text-sm text-foreground focus:border-accent outline-none transition-colors"
+                      id="email"
+                      name="email"
+                      type="email"
+                      required
+                      placeholder="you@example.com"
+                      className="bg-background border border-muted/30 rounded-lg px-3.5 py-2.5 text-sm text-foreground focus:border-accent outline-none transition-colors"
                     />
                   </div>
                 </div>
               </StaggerItem>
 
               <StaggerItem>
-                <div className="flex flex-col gap-1">
-                  <label htmlFor="message" className="font-mono text-[10px] text-muted uppercase tracking-widest">Message</label>
+                <div className="flex flex-col gap-1.5">
+                  <label htmlFor="message" className="font-mono text-[10px] text-muted uppercase tracking-widest">
+                    Message
+                  </label>
                   <textarea
-                    id="message" name="message" required rows={6} placeholder="Let's talk about..."
-                    className="bg-background border border-muted/30 rounded-lg px-3 py-2.5 text-sm text-foreground focus:border-accent outline-none transition-colors resize-none"
+                    id="message"
+                    name="message"
+                    required
+                    rows={5}
+                    placeholder="Let's talk about..."
+                    className="bg-background border border-muted/30 rounded-lg px-3.5 py-2.5 text-sm text-foreground focus:border-accent outline-none transition-colors resize-none"
                   />
                 </div>
               </StaggerItem>
@@ -152,14 +202,25 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={status === "sending"}
-                  className="w-full flex items-center justify-center gap-2 font-mono text-sm bg-accent text-background font-semibold py-3 rounded-lg hover:brightness-110 transition-all disabled:opacity-50"
+                  className="w-full flex items-center justify-center gap-2 font-mono text-sm bg-accent text-background font-semibold py-3 rounded-lg hover:brightness-110 transition-all disabled:opacity-50 cursor-pointer shadow-md"
                 >
-                  {status === "sending" ? "Sending..." : status === "sent" ? "Message sent ✓" : (<><Send size={14} />Send Message</>)}
+                  {status === "sending" ? (
+                    "Sending..."
+                  ) : status === "sent" ? (
+                    "Message sent successfully ✓"
+                  ) : (
+                    <>
+                      <Send size={14} />
+                      <span>Send Message</span>
+                    </>
+                  )}
                 </button>
               </StaggerItem>
 
               {status === "error" && (
-                <p className="text-sm text-red-400 text-center">Something went wrong — try emailing me directly instead.</p>
+                <p className="text-sm text-red-400 text-center">
+                  Something went wrong — feel free to email me directly at adilaadhy.dev@gmail.com
+                </p>
               )}
             </form>
           </StaggerContainer>
@@ -169,10 +230,13 @@ export default function Contact() {
           {info.map((item) => {
             const Icon = item.icon;
             return (
-              <div key={item.title} className="bg-surface border border-muted/20 rounded-xl p-5 flex flex-col gap-2">
+              <div
+                key={item.title}
+                className="bg-surface border border-muted/20 rounded-xl p-5 flex flex-col gap-2 hover:border-accent/30 transition-colors"
+              >
                 <Icon size={18} className="text-accent" />
-                <h3 className="font-semibold text-foreground">{item.title}</h3>
-                <p className="text-sm text-muted leading-relaxed">{item.text}</p>
+                <h3 className="font-semibold text-foreground text-sm sm:text-base">{item.title}</h3>
+                <p className="text-xs sm:text-sm text-muted leading-relaxed">{item.text}</p>
               </div>
             );
           })}

@@ -3,8 +3,9 @@
 import { useEffect, useRef } from "react";
 import { GitHubCalendar } from "react-github-calendar";
 import { SiGithub } from "react-icons/si";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, GitCommit } from "lucide-react";
 import { useIsClient } from "@/lib/hooks";
+import FadeIn from "@/components/FadeIn";
 
 export default function Activity() {
   const isClient = useIsClient();
@@ -22,43 +23,56 @@ export default function Activity() {
   }, [isClient]);
 
   return (
-    <section id="activity" className="w-full max-w-5xl flex flex-col gap-6 scroll-mt-24">
-      <div className="flex items-center gap-4">
-        <h2 className="font-mono text-sm text-accent uppercase tracking-widest whitespace-nowrap">
-          activity
-        </h2>
-        <div className="h-px flex-grow bg-muted/20" />
-      </div>
-
-      <div className="border border-muted/20 rounded-2xl p-6 flex flex-col gap-4 bg-surface">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <SiGithub size={18} className="text-accent" />
-            <span className="font-mono text-sm font-semibold">adil2133-git</span>
+    <FadeIn>
+      <section id="activity" className="w-full max-w-5xl flex flex-col gap-6 scroll-mt-24">
+        <div className="flex flex-col gap-2">
+          <div className="flex items-center gap-4">
+            <h2 className="font-mono text-sm text-accent uppercase tracking-widest whitespace-nowrap flex items-center gap-2">
+              <GitCommit size={15} />
+              <span>05 / activity</span>
+            </h2>
+            <div className="h-px flex-grow bg-muted/20" />
           </div>
-          <a
-            href="https://github.com/adil2133-git"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-muted hover:text-accent transition-colors"
-          >
-            <ExternalLink size={16} />
-          </a>
+          <p className="text-muted text-sm sm:text-base">
+            Open-source and repository commits across GitHub.
+          </p>
         </div>
 
-        <div ref={scrollRef} className="activity-scroll overflow-x-auto pb-2 flex justify-start md:justify-center">
-          {isClient && (
-            <GitHubCalendar
-              username="adil2133-git"
-              colorScheme="dark"
-              theme={{ dark: ["#1b1d26", "#2A2464", "#3F35A5", "#5A4CD9", "#7C6FF0"] }}
-              fontSize={12}
-              blockSize={11}
-              blockMargin={4}
-            />
-          )}
+        <div className="border border-muted/20 rounded-2xl p-5 sm:p-6 flex flex-col gap-4 bg-surface shadow-md">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <SiGithub size={18} className="text-accent" />
+              <span className="font-mono text-sm font-semibold text-foreground">adil2133-git</span>
+            </div>
+            <a
+              href="https://github.com/adil2133-git"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View adil2133-git on GitHub"
+              className="text-muted hover:text-accent transition-colors flex items-center gap-1.5 font-mono text-xs"
+            >
+              <span className="hidden sm:inline">Profile</span>
+              <ExternalLink size={14} />
+            </a>
+          </div>
+
+          <div
+            ref={scrollRef}
+            className="activity-scroll overflow-x-auto pb-3 pt-1 flex justify-start md:justify-center"
+          >
+            {isClient && (
+              <GitHubCalendar
+                username="adil2133-git"
+                colorScheme="dark"
+                theme={{ dark: ["#1b1d26", "#2A2464", "#3F35A5", "#5A4CD9", "#7C6FF0"] }}
+                fontSize={12}
+                blockSize={11}
+                blockMargin={4}
+              />
+            )}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </FadeIn>
   );
-}
+}
