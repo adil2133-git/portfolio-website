@@ -6,18 +6,18 @@ import { ReactNode } from "react";
 const container: Variants = {
   hidden: {},
   show: {
-    transition: { staggerChildren: 0.12 },
+    transition: { staggerChildren: 0.1 },
   },
 };
 
 const item: Variants = {
-  hidden: { opacity: 0, y: 24 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+  hidden: { opacity: 0, y: 16 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.45, ease: "easeOut" } },
 };
 
 export function StaggerContainer({
   children,
-  className,
+  className = "w-full",
 }: {
   children: ReactNode;
   className?: string;
@@ -28,13 +28,23 @@ export function StaggerContainer({
       variants={container}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true, margin: "-80px" }}
+      viewport={{ once: true, margin: "0px" }}
     >
       {children}
     </motion.div>
   );
 }
 
-export function StaggerItem({ children }: { children: ReactNode }) {
-  return <motion.div variants={item}>{children}</motion.div>;
+export function StaggerItem({
+  children,
+  className,
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
+  return (
+    <motion.div className={className} variants={item}>
+      {children}
+    </motion.div>
+  );
 }

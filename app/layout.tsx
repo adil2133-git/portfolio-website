@@ -21,13 +21,30 @@ const plexMono = IBM_Plex_Mono({
 export const metadata: Metadata = {
   title: "Abdul Rahman Adil | Full-Stack Developer",
   description:
-    "Portfolio of Abdul Rahman Adil — Full-Stack Developer (MERN) building QuickCart and FUTGEN.",
-  keywords: ["Abdul Rahman Adil", "Full Stack Developer", "MERN Developer", "React", "Next.js"],
+    "Portfolio of Abdul Rahman Adil — Full-Stack Developer (MERN & PostgreSQL) with three deployed production apps: QuickKart, RevSlot, and FUTGEN.",
+  keywords: [
+    "Abdul Rahman Adil",
+    "Full-Stack Developer",
+    "MERN Developer",
+    "React 19",
+    "Next.js",
+    "Node.js",
+    "Express",
+    "PostgreSQL",
+    "MongoDB",
+    "Docker",
+    "AWS",
+    "QuickKart",
+    "RevSlot",
+    "FUTGEN",
+  ],
+  authors: [{ name: "Abdul Rahman Adil" }],
+  creator: "Abdul Rahman Adil",
   openGraph: {
     title: "Abdul Rahman Adil | Full-Stack Developer",
-    description: "Full-Stack Developer (MERN) — QuickCart, FUTGEN, and more.",
-    url: "https://your-domain.com",
-    siteName: "Abdul Rahman Adil",
+    description:
+      "Full-Stack Developer with 3 deployed production platforms: QuickKart, RevSlot, and FUTGEN. Deploys with Docker, AWS, and CI/CD.",
+    siteName: "Abdul Rahman Adil Portfolio",
     type: "website",
   },
 };
@@ -40,9 +57,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${plexSans.variable} ${plexMono.variable} h-full antialiased`}
+      className={`${plexSans.variable} ${plexMono.variable} h-full antialiased scroll-smooth`}
     >
-      <body className="min-h-full flex flex-col font-sans antialiased">
+      <body className="min-h-full flex flex-col font-sans antialiased overflow-x-hidden">
         <PageLoader>
           <NetworkBackground />
           <Header />
