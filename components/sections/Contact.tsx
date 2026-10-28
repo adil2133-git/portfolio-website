@@ -39,7 +39,7 @@ export default function Contact() {
   const details = [
     { icon: Mail, label: "Email", value: "adilaadhy.dev@gmail.com", href: "mailto:adilaadhy.dev@gmail.com" },
     { icon: Phone, label: "Phone", value: "+91 7994931322", href: "tel:+917994931322" },
-    { icon: MapPin, label: "Location", value: "Kerala, India", href: null },
+    { icon: MapPin, label: "Location", value: "Kerala, India (Open to Relocate)", href: null },
   ];
 
   const socials = [
@@ -61,7 +61,7 @@ export default function Contact() {
     {
       icon: MapPin,
       title: "Location Preference",
-      text: "Kerala, India — open to remote roles, hybrid setups, and full relocation opportunities.",
+      text: "Willing to relocate anywhere in India (Preferred: Bengaluru, Mumbai, Kerala) — open to on-site, hybrid, and remote opportunities.",
     },
   ];
 
