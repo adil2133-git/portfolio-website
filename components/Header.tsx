@@ -1,22 +1,34 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
+import Link from "next/link";
 import gsap from "gsap";
 import { Menu, X, FileText } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-  { href: "#about", label: "About" },
-  { href: "#projects", label: "Projects" },
-  { href: "#experience", label: "Experience" },
-  { href: "#skills", label: "Skills" },
-  { href: "#contact", label: "Contact" },
+  { href: "/#about", label: "About" },
+  { href: "/#projects", label: "Projects" },
+  { href: "/#experience", label: "Experience" },
+  { href: "/#skills", label: "Skills" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const underlineRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileMenuOpen]);
 
   function handleNavHover(e: React.MouseEvent<HTMLAnchorElement>) {
     const target = e.currentTarget;
@@ -54,12 +66,12 @@ export default function Header() {
       }`}
     >
       <nav className="flex items-center justify-between px-4 sm:px-6 py-4 max-w-6xl mx-auto">
-        <a
+        <Link
           href="/"
           className="font-mono text-sm sm:text-base text-accent font-bold tracking-tight hover:opacity-80 transition-opacity"
         >
           ~/adil
-        </a>
+        </Link>
 
         {/* Desktop Navigation */}
         <div

@@ -58,7 +58,7 @@ function TerminalScan() {
     <motion.div
       onViewportEnter={() => setStarted(true)}
       viewport={{ once: true, margin: "-100px" }}
-      className="font-mono text-xs sm:text-sm bg-surface border border-muted/20 rounded-xl p-5 sm:p-6 flex flex-col gap-2 shadow-inner"
+      className="font-mono text-xs sm:text-sm bg-surface border border-muted/20 rounded-xl p-5 sm:p-6 flex flex-col gap-2 shadow-inner min-h-[220px]"
     >
       <p className="text-accent mb-1 font-semibold">&gt; runtime environment stack scan...</p>
       {coreSkills.map((skill, i) => {

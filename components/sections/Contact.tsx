@@ -28,6 +28,7 @@ export default function Contact() {
       if (result.success) {
         setStatus("sent");
         form.reset();
+        setTimeout(() => setStatus("idle"), 5000);
       } else {
         setStatus("error");
       }
@@ -162,8 +163,9 @@ export default function Contact() {
                       name="name"
                       type="text"
                       required
+                      disabled={status === "sending"}
                       placeholder="Your name"
-                      className="bg-background border border-muted/30 rounded-lg px-3.5 py-2.5 text-sm text-foreground focus:border-accent outline-none transition-colors"
+                      className="bg-background border border-muted/30 rounded-lg px-3.5 py-2.5 text-sm text-foreground focus:border-accent outline-none transition-colors disabled:opacity-60"
                     />
                   </div>
                   <div className="flex flex-col gap-1.5">
@@ -175,8 +177,9 @@ export default function Contact() {
                       name="email"
                       type="email"
                       required
+                      disabled={status === "sending"}
                       placeholder="you@example.com"
-                      className="bg-background border border-muted/30 rounded-lg px-3.5 py-2.5 text-sm text-foreground focus:border-accent outline-none transition-colors"
+                      className="bg-background border border-muted/30 rounded-lg px-3.5 py-2.5 text-sm text-foreground focus:border-accent outline-none transition-colors disabled:opacity-60"
                     />
                   </div>
                 </div>
@@ -191,9 +194,10 @@ export default function Contact() {
                     id="message"
                     name="message"
                     required
+                    disabled={status === "sending"}
                     rows={5}
                     placeholder="Let's talk about..."
-                    className="bg-background border border-muted/30 rounded-lg px-3.5 py-2.5 text-sm text-foreground focus:border-accent outline-none transition-colors resize-none"
+                    className="bg-background border border-muted/30 rounded-lg px-3.5 py-2.5 text-sm text-foreground focus:border-accent outline-none transition-colors resize-none disabled:opacity-60"
                   />
                 </div>
               </StaggerItem>

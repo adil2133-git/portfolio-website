@@ -12,14 +12,25 @@ export default function Activity() {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!isClient) return;
+    if (!isClient || !scrollRef.current) return;
+    const container = scrollRef.current;
+
+    // Auto-scroll to the latest activity once the calendar SVG renders/resizes
+    const observer = new ResizeObserver(() => {
+      container.scrollLeft = container.scrollWidth;
+    });
+
+    observer.observe(container);
+
+    // Initial check in case it's already rendered
     const timer = setTimeout(() => {
-      const el = scrollRef.current;
-      if (el) {
-        el.scrollLeft = el.scrollWidth;
-      }
-    }, 100);
-    return () => clearTimeout(timer);
+      container.scrollLeft = container.scrollWidth;
+    }, 300);
+
+    return () => {
+      observer.disconnect();
+      clearTimeout(timer);
+    };
   }, [isClient]);
 
   return (
@@ -58,9 +69,9 @@ export default function Activity() {
 
           <div
             ref={scrollRef}
-            className="activity-scroll overflow-x-auto pb-3 pt-1 flex justify-start md:justify-center"
+            className="activity-scroll overflow-x-auto pb-3 pt-1 flex justify-start md:justify-center min-h-[140px] items-center"
           >
-            {isClient && (
+            {isClient ? (
               <GitHubCalendar
                 username="adil2133-git"
                 colorScheme="dark"
@@ -69,6 +80,10 @@ export default function Activity() {
                 blockSize={11}
                 blockMargin={4}
               />
+            ) : (
+              <div className="w-full h-28 flex items-center justify-center font-mono text-xs text-muted/50 animate-pulse">
+                Loading contribution calendar...
+              </div>
             )}
           </div>
         </div>
